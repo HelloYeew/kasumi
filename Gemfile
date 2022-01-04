@@ -6,4 +6,3 @@ gem 'discordrb'
 gem 'dotenv'
 gem 'json'
 
-# gem "rails"
