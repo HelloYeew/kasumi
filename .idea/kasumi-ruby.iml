@@ -11,6 +11,7 @@
     </content>
     <orderEntry type="jdk" jdkName="ruby-3.1.0-p0" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.3.4, ruby-3.1.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="discordrb (v3.4.0, ruby-3.1.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="discordrb-webhooks (v3.3.0, ruby-3.1.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="domain_name (v0.5.20190701, ruby-3.1.0-p0) [gem]" level="application" />
