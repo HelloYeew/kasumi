@@ -3,6 +3,9 @@
 require 'discordrb'
 require 'logger'
 require 'dotenv/load'
+require 'json'
+
+bot_config = JSON.parse(File.read('./version.json'))
 
 bot = Discordrb::Commands::CommandBot.new token: ENV['token'], prefix: ENV['prefix']
 
@@ -46,13 +49,14 @@ bot.command :user do |event|
   event.channel.send_embed do |embed|
     embed.colour = 14_584_191
     embed.title = "#{event.user.name}'s Profile"
+    embed.description = 'Your full profile detail is here!'
     embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: event.user.avatar_url.to_s)
     embed.add_field(name: 'Username', value: event.user.username)
     embed.add_field(name: 'Account Created', value: event.user.creation_time.to_s)
     embed.add_field(name: 'Bot?', value: event.user.current_bot?.to_s)
     embed.add_field(name: 'Status', value: event.user.status.to_s)
     embed.add_field(name: 'Playing', value: event.user.game) unless event.user.game.nil?
-    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'Kasumi')
+    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: "Kasumi #{bot_config['version']}", icon_url: bot_config['icon_url'])
   end
 end
 
