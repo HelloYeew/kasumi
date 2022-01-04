@@ -40,9 +40,20 @@ bot.command :ping do |event|
 end
 
 bot.command :user do |event|
+  # Return the embed of user info
   logger.debug("Message received from '#{event.author.username}' in server '#{event.server.name}' (##{event.channel.name}) : #{event.message}")
   logger.debug("Responded by user command with response time #{Time.now - event.timestamp} seconds")
-  event.user.name
+  event.channel.send_embed do |embed|
+    embed.colour = 14_584_191
+    embed.title = "#{event.user.name}'s Profile"
+    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: event.user.avatar_url.to_s)
+    embed.add_field(name: 'Username', value: event.user.username)
+    embed.add_field(name: 'Account Created', value: event.user.creation_time.to_s)
+    embed.add_field(name: 'Bot?', value: event.user.current_bot?.to_s)
+    embed.add_field(name: 'Status', value: event.user.status.to_s)
+    embed.add_field(name: 'Playing', value: event.user.game) unless event.user.game.nil?
+    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'Kasumi')
+  end
 end
 
 bot.run
