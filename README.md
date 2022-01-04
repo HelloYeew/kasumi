@@ -11,4 +11,7 @@ Before you can start running Kasumi, you must set the environment variable by cr
 ```
 token=yout-bot-token
 prefix=!
+debug=true
 ```
+
+Note : If you are running the bot on the real usage please set `debug=false`
