@@ -132,3 +132,4 @@ build-iPhoneSimulator/
 
 # log file that create by logger
 *.log
+*.log.*
