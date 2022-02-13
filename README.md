@@ -1,6 +1,8 @@
 # kasumi-ruby
  A rewrite of [Kasumi](https://github.com/HelloYeew/kasumi-old) in Ruby
  
+ Currently have a plan to rewrite it as Discord.NET due to the performance of it.
+ 
 ## Invite link
 
 You can invite the bot to your server by use [this link](https://discord.com/oauth2/authorize?client_id=806810705205395456&permissions=8&scope=bot)
